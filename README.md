@@ -83,38 +83,6 @@ The extension needs these permissions:
 | `activeTab` | Allows interaction with the current tab after user action |
 | `<all_urls>` | Allows fetching images from different websites |
 
-## Example Manifest
-
-```json
-{
-  "manifest_version": 3,
-  "name": "Image Converter Saver",
-  "version": "1.0.0",
-  "description": "Save images as PNG or JPG from the right-click menu, with SVG support and smart JPG background fill.",
-  "permissions": [
-    "contextMenus",
-    "downloads",
-    "notifications",
-    "scripting",
-    "activeTab"
-  ],
-  "host_permissions": [
-    "<all_urls>"
-  ],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "run_at": "document_start",
-      "all_frames": true
-    }
-  ]
-}
-```
-
 ## Usage
 
 1. Navigate to a webpage with an image.
